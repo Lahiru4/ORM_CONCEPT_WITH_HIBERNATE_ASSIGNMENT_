@@ -48,13 +48,18 @@ public class Main {
     private static void saveBookAndAuthor() {
         Session session = FactoryConfiguration.getInstance().getSession();
         Transaction transaction = session.beginTransaction();
+
         Author kumar = new Author("001", "kumar", null);
         Book hansaSandeshaya = new Book("001", "Hansa Sandeshaya", "8485485eeefyj", null);
         List<Author> authors=new ArrayList<Author>();
         authors.add(kumar);
 
-        kumar.setBook(hansaSandeshaya);
+        List<Book> books=new ArrayList<Book>();
+        books.add(hansaSandeshaya);
+
+
         hansaSandeshaya.setAuthors(authors);
+        kumar.setBooks(books);
 
 
         try {
@@ -74,12 +79,18 @@ public class Main {
         Session session = FactoryConfiguration.getInstance().getSession();
         Transaction transaction = session.beginTransaction();
 
-        Author kumar = new Author("001", "kumar sampath", null);
-        Book hansaSandeshaya = new Book("001", "Hansa ", "8485485eeefyj", null);
+
+        Author kumar = new Author("001", "kumar", null);
+        Book hansaSandeshaya = new Book("001", "Hansa Sandeshaya", "8485485eeefyj", null);
         List<Author> authors=new ArrayList<Author>();
         authors.add(kumar);
-        kumar.setBook(hansaSandeshaya);
+
+        List<Book> books=new ArrayList<Book>();
+        books.add(hansaSandeshaya);
+
+
         hansaSandeshaya.setAuthors(authors);
+        kumar.setBooks(books);
 
         try {
             session.update(kumar);
@@ -99,12 +110,18 @@ public class Main {
         Session session = FactoryConfiguration.getInstance().getSession();
         Transaction transaction = session.beginTransaction();
 
-        Author kumar = new Author("001", "kumar sampath", null);
-        Book hansaSandeshaya = new Book("001", "Hansa ", "8485485eeefyj", null);
+
+        Author kumar = new Author("001", "kumar", null);
+        Book hansaSandeshaya = new Book("001", "Hansa Sandeshaya", "8485485eeefyj", null);
         List<Author> authors=new ArrayList<Author>();
         authors.add(kumar);
-        kumar.setBook(hansaSandeshaya);
+
+        List<Book> books=new ArrayList<Book>();
+        books.add(hansaSandeshaya);
+
+
         hansaSandeshaya.setAuthors(authors);
+        kumar.setBooks(books);
 
         try {
             session.delete(kumar);
